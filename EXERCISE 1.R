@@ -14,11 +14,14 @@ dataset2 <- mpg %>%
 
 dataset_one <- select(mpg, drv, cty, trans)
 
+dataset_one <- dataset_one %>%
+  rename(transport = trans)
+
 #OR
 dataset_one <- mpg %>% 
   select(drv, cty, trans)
 
-#Rename dataset
+#Rename data set
 dataset_one <- mpg %>% 
   rename(transport = trans)
 
