@@ -7,19 +7,7 @@ hflights
 
 hflights %>%
   group_by(UniqueCarrier) %>% 
-  summarise(num_flights = n())
-
-hflights %>% 
-  group_by(UniqueCarrier) %>% 
-  summarise(total_distance = sum(Distance))
-
-hflights %>% 
-  group_by(UniqueCarrier) %>% 
-  summarise(elapsed_time = sum(ActualElapsedTime))
-
-hflights %>% 
-  group_by(UniqueCarrier) %>% 
-  summarise( T_Airtime = sum(AirTime))
-
-
-
+  summarise(num_flights = n(),
+            total_distance = sum(Distance),
+            elapsed_time = sum(ActualElapsedTime, na.rm = T),
+            T_Airtime = sum(AirTime, na.rm = T))

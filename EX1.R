@@ -9,16 +9,11 @@ mpg %>%
   select(manufacturer, class,
          cty, hwy) %>% 
   rename(manf = manufacturer) %>% 
-  filter(cty > 25) 
-  
-mpg %>% 
-  group_by(manufacturer, class) %>% 
-  summarise(count = n())
+  filter(cty > 25)  %>% 
+  group_by(manf, class) %>% 
+  summarise(count = n(),
+          average_hwy  = mean(hwy))
 
-mpg %>% 
-  group_by(hwy) %>% 
-  summarise(mean(hwy))
-  
   
  
 

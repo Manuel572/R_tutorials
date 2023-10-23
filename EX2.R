@@ -9,7 +9,3 @@ mpg %>%
   group_by(manufacturer) %>% 
   summarise(mean_hwy = mean(hwy)) %>% 
   filter(mean_hwy == max(mean_hwy))
-  
-  
-
-  
