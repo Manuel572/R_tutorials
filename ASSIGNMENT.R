@@ -14,9 +14,3 @@ hflights
   select( UniqueCarrier, Month, normalized_total) %>% 
   pivot_wider(names_from = Month, values_from = normalized_total,
               values_fill = 0)
-
-
-  
-  
-
-            
